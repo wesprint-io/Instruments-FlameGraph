@@ -10,12 +10,12 @@ let package = Package(
         .library(name: "FlameGraphCore", targets: ["FlameGraphCore"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/hartbit/Yaap.git", .branch("master")),
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.3.0"),
     ],
     targets: [
         .target(
             name: "FlameGraph",
-            dependencies: ["Yaap", "FlameGraphCore"]
+            dependencies: ["ArgumentParser", "FlameGraphCore"]
         ),
         .target(
             name: "FlameGraphCore",

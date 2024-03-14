@@ -1,5 +1,4 @@
 import Foundation
-import Yaap
 
 enum MissingInputError: LocalizedError {
     case missingInputOrPasteboard
