@@ -1,10 +1,11 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "FlameGraph",
+    platforms: [.macOS(.v10_13)],
     products: [
         .executable(name: "FlameGraph", targets: ["FlameGraph"]),
         .library(name: "FlameGraphCore", targets: ["FlameGraphCore"]),
@@ -15,7 +16,10 @@ let package = Package(
     targets: [
         .target(
             name: "FlameGraph",
-            dependencies: ["ArgumentParser", "FlameGraphCore"]
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                "FlameGraphCore",
+            ]
         ),
         .target(
             name: "FlameGraphCore",
